@@ -1,0 +1,14 @@
+.contact{
+    display: flex;
+    flex-direction: column;
+    width: 160px;
+}
+
+.contactButton{
+    width: 90px;
+    margin-top: 20px;
+}
+
+.contactInput{
+    margin-top: 10px;
+}
