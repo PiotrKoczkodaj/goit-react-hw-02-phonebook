@@ -13,7 +13,44 @@ export class App extends Component{
     
   };
 
+  ;
 
+    handleChange = evt => {
+      evt.preventDefault();
+    
+    this.setState({ name: evt.target.value });
+  
+    };
+  
+  name = () => {
+
+    
+
+ return(<p>{this.state.name }</p>)
+
+  }
+
+    
+ 
+  
+  handleSubmit = (evt,arr) => {
+    evt.preventDefault();
+    const form = evt.currentTarget;
+    
+    console.log(this.state.name);
+    
+   
+
+    form.reset()
+    
+   
+
+    
+
+ 
+   
+    
+  };
 
   render() {
       return (
@@ -25,7 +62,7 @@ export class App extends Component{
       }}
         >
           <h1>Phonebook</h1>
-          <ContactForm/>
+          <ContactForm name={this.name} handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
 
     </div>
       );
