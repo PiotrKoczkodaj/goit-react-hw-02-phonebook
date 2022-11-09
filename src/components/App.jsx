@@ -22,36 +22,34 @@ export class App extends Component{
   
     };
   
-  name = () => {
-
+  name = (evt) => {
     
-
- return(<p>{this.state.name }</p>)
+    const name = this.state.name
+    const contactArray = this.state.contacts;
+   console.log(contactArray)
+//     return (
+//       <ul><li>{contactArray}</li></ul>
+// )
 
   }
 
     
  
   
-  handleSubmit = (evt,arr) => {
+  handleSubmit = (evt) => {
     evt.preventDefault();
     const form = evt.currentTarget;
+    const name = this.state.name
+    const contactArray = this.state.contacts;
+    contactArray.push({ name: name });
+    // console.log(contactArray);
     
-    console.log(this.state.name);
-    
-   
-
-    form.reset()
-    
-   
-
-    
-
  
-   
-    
+    form.reset()
+     
   };
 
+  
   render() {
       return (
     <div
