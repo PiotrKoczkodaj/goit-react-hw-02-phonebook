@@ -4,13 +4,12 @@ import styles from './ContactForm.module.css';
 export const ContactForm =({handleSubmit,handleChange,name}) =>{
     
 
-
-
     return (
-        <div>
+        
+        <div onClick={name}>
         <form onSubmit={handleSubmit}  className={styles.contact}>
                 <label >Name</label> 
-                {name()}
+                
                 <input className={styles.contactInput}
   onChange={handleChange}                  
   type="text"

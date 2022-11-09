@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { ContactForm } from "./ContactForm/ContactForm";
 
+
+
+const INITIAL_STATE
 export class App extends Component{
   
   constructor() {
@@ -23,14 +26,9 @@ export class App extends Component{
     };
   
   name = () => {
-    
-    
-    const contactArray = this.state.contacts;
-   console.log(contactArray)
-//     return (
-//       <ul><li>{contactArray}</li></ul>
-// )
 
+    let contactArray = this.state.contacts;
+   
   }
 
     
@@ -40,9 +38,9 @@ export class App extends Component{
     evt.preventDefault();
     const form = evt.currentTarget;
     const name = this.state.name
-    const contactArray = this.state.contacts;
+    let contactArray = this.state.contacts;
     contactArray.push({ name: name });
-    // console.log(contactArray);
+    console.log(contactArray);
     
  
     form.reset()
