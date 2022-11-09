@@ -22,9 +22,9 @@ export class App extends Component{
   
     };
   
-  name = (evt) => {
+  name = () => {
     
-    const name = this.state.name
+    
     const contactArray = this.state.contacts;
    console.log(contactArray)
 //     return (
