@@ -27,13 +27,14 @@ export class App extends Component {
     
   handleSubmit = (evt) => {
     evt.preventDefault();
-    
+    const form = evt.currentTarget;
     const name = this.state.name
     let contactArray = this.state.contacts;
     contactArray.push({ name: name });
+    console.log(contactArray)
+
+    form.reset();
     
-    
-  
   }
     render() {
       return (
