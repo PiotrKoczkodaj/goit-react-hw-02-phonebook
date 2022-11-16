@@ -1,9 +1,16 @@
 
 
-export const Filter = () => {
+export const Filter = (state) => {
+   
+    const object = state.state;
+    const contacts = object.contacts
+   return (
+    contacts.map((contact) => (
 
-    return (
-        <h3>elo</h3>
-    )
+        <ul>
+            <li key={contact.id }>{contact.name }</li>
+        </ul>
+        
+        )))
 
 }

@@ -43,15 +43,17 @@ export class App extends Component {
     evt.preventDefault();
     const form = evt.currentTarget;
     const name = this.state.name;
-    const numberd = this.state.number;
+    const number = this.state.number;
     let contactArray = this.state.contacts;
-    contactArray.push({ name: name, id:nanoid(), number:numberd});
+    contactArray.push({ name: name, id:nanoid(), number:number});
 
     console.log(contactArray)
 
     form.reset();
     
   }
+
+ 
 
     render() {
       return (
@@ -65,7 +67,7 @@ export class App extends Component {
           <h1>Phonebook</h1>
           <ContactForm state={this.state} handleChange={this.handleChange} handleSubmit={this.handleSubmit} handleChanged = {this.handleChanged} />
           <h2>Contacts</h2>
-          <Filter/>
+          <Filter state={this.state} />
         </div>
       );
     }
