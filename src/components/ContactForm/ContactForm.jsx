@@ -6,7 +6,7 @@ export const ContactForm =({handleSubmit,handleChange,name}) =>{
 
     return (
         
-        <div onClick={name}>
+        <div>
         <form onSubmit={handleSubmit}  className={styles.contact}>
                 <label >Name</label> 
                 
