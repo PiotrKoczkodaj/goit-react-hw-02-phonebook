@@ -10,7 +10,7 @@ export const Filter = (state) => {
 
             <ul>
           
-            <li key={contact.id}>{contact.name}</li>
+            <li key={contact.id}>{contact.name} {contact.number }</li>
             
             </ul>
             

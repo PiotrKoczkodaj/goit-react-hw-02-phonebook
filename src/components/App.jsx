@@ -2,14 +2,18 @@ import React, { Component } from "react";
 import { ContactForm } from "./ContactForm/ContactForm";
 import { Filter } from "./Filter/Filter";
 import { nanoid } from 'nanoid';
+  
 
 export class App extends Component {
-  
+
   constructor() {
     super();
 
     this.state = {
-      contacts: [],
+      contacts: [ {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
+    {id: 'id-2', name: 'Hermione Kline', number: '443-89-12'},
+    {id: 'id-3', name: 'Eden Clements', number: '645-17-79'},
+    {id: 'id-4', name: 'Annie Copeland', number: '227-91-26'}],
       name: '',
       number:''
     };
@@ -42,16 +46,22 @@ export class App extends Component {
     const form = evt.currentTarget;
     const name = this.state.name;
     const number = this.state.number;
-    let contactArray = this.state.contacts;
-    contactArray.push({ name: name, id:nanoid(), number:number});
+    // let contactArray = this.state.contacts;
+    // contactArray.push({ name: name, id: nanoid(), number: number });
+    this.setState(prevState => ({
+      contacts: [...prevState.contacts,
+        {
+          name: name,
+          id: nanoid(),
+          number: number
+        }]
+    }))
 
-    console.log(contactArray)
+    // console.log(contactArray)
 
     form.reset();
     
   }
-
- 
 
     render() {
       return (
