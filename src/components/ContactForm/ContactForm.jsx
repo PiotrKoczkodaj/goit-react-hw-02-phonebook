@@ -1,7 +1,7 @@
 
 import styles from './ContactForm.module.css';
 
-export const ContactForm =({handleSubmit,handleChange,name}) =>{
+export const ContactForm =({handleSubmit,handleChange,handleChanged,state}) =>{
     
 
     return (
@@ -17,11 +17,12 @@ export const ContactForm =({handleSubmit,handleChange,name}) =>{
   pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
   title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
   required/>      
-                
+                <label>Number</label>
+                <input onChange={handleChanged} type="tel" name="number"/>
 <button  type='submit' className={styles.contactButton}>Add contact</button>
             </form>
-         
-            </div>
+        
+        </div>
         
     
     )

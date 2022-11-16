@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { ContactForm } from "./ContactForm/ContactForm";
+import { nanoid } from 'nanoid';
 
 export class App extends Component {
   
@@ -8,7 +9,8 @@ export class App extends Component {
 
     this.state = {
       contacts: [],
-      name: ''
+      name: '',
+      number:''
     };
     
   };
@@ -18,24 +20,38 @@ export class App extends Component {
   handleChange = evt => {
     evt.preventDefault();
     
-    this.setState({ name: evt.target.value });
+    this.setState({
+      name: evt.target.value,
+
+    });
   
   };
   
- 
+ handleChanged = evt => {
+    evt.preventDefault();
+    
+    this.setState({
+      number: evt.target.value,
 
+    });
+  
+  };
+ 
     
   handleSubmit = (evt) => {
     evt.preventDefault();
     const form = evt.currentTarget;
-    const name = this.state.name
+    const name = this.state.name;
+    const numberd = this.state.number;
     let contactArray = this.state.contacts;
-    contactArray.push({ name: name });
+    contactArray.push({ name: name, id:nanoid(), number:numberd});
+
     console.log(contactArray)
 
     form.reset();
     
   }
+
     render() {
       return (
         <div
@@ -46,8 +62,8 @@ export class App extends Component {
           }}
         >
           <h1>Phonebook</h1>
-          <ContactForm name={this.name} handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
-
+          <ContactForm state={this.state} handleChange={this.handleChange} handleSubmit={this.handleSubmit} handleChanged = {this.handleChanged} />
+          <h2>Contacts</h2>
         </div>
       );
     }
