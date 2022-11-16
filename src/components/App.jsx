@@ -16,9 +16,7 @@ export class App extends Component {
     
   };
 
-  ;
-
-  handleChange = evt => {
+  handleChangeName = evt => {
     evt.preventDefault();
     
     this.setState({
@@ -28,7 +26,7 @@ export class App extends Component {
   
   };
   
- handleChanged = evt => {
+ handleChangeNumber = evt => {
     evt.preventDefault();
     
     this.setState({
@@ -65,7 +63,7 @@ export class App extends Component {
           }}
         >
           <h1>Phonebook</h1>
-          <ContactForm state={this.state} handleChange={this.handleChange} handleSubmit={this.handleSubmit} handleChanged = {this.handleChanged} />
+          <ContactForm state={this.state} handleChangeName={this.handleChangeName} handleSubmit={this.handleSubmit} handleChangeNumber = {this.handleChangeNumber} />
           <h2>Contacts</h2>
           <Filter state={this.state} />
         </div>
