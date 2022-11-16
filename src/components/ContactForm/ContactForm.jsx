@@ -1,7 +1,6 @@
-
 import styles from './ContactForm.module.css';
 
-export const ContactForm =({handleSubmit,handleChange,handleChanged,state}) =>{
+export const ContactForm =({handleSubmit,handleChange,handleChanged}) =>{
     
 
     return (
