@@ -63,6 +63,9 @@ export class App extends Component {
     
   }
 
+
+
+
     render() {
       return (
         <div
@@ -75,7 +78,7 @@ export class App extends Component {
           <h1>Phonebook</h1>
           <ContactForm state={this.state} handleChangeName={this.handleChangeName} handleSubmit={this.handleSubmit} handleChangeNumber = {this.handleChangeNumber} />
           <h2>Contacts</h2>
-          <Filter state={this.state} />
+          <Filter state={this.state} deleteFunction={this.deleteFunction} />
         </div>
       );
     }
